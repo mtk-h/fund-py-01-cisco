@@ -22,12 +22,12 @@ def days_in_month(year, month): # quantidade de dias em determinado mês
     return days[month - 1]
 
 def day_of_year(year, month, day): # identificação de quantidade de dias no ano
-    # if year < 1582:
-    #     return None
-    # elif month > 12 or month < 1:
-    #     return None
-    # elif day > days_in_month(year, month) or day < 1:
-    #     return None
+    if year < 1582:
+        return None
+    elif month > 12 or month < 1:
+        return None
+    elif day > days_in_month(year, month) or day < 1:
+        return None
     
     total_days = day # quantidade de dias no ano recebe a quantidade de dias do mês inputado
     month -= 1 # enquanto o mês decrementa 1 (pois não considera o mês "corrente")
